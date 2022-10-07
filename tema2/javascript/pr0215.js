@@ -2,26 +2,18 @@ function fact(n1,n2,operador){
     n1=Number(n1);
     n2=Number(n2);
     operador=String(operador);
-    let resultado;
-    resultado=Number(resultado);
     if(operador=="+"){
-        resultado=n1+n2;
-        console.log(resultado);
+        return n1+n2;
     }else if(operador=="-"){
-        resultado=n1-n2;
-        console.log(resultado);
+        return n1-n2;
     }else if(operador=="*"){
-        resultado=n1*n2;
-        console.log(resultado);
+        return n1*n2;
     }else if(operador=="/"){
-        resultado=n1/n2;
-        console.log(resultado);
+        return n1/n2;
     }else if(operador=="%"){
-        resultado=n1%n2;
-        console.log(resultado);
+        return n1%n2;
     }else if(operador=="pow"){
-        resultado=Math.pow(n1,n2);
-        console.log(resultado);
+        return Math.pow(n1,n2);
     }
     else {
         console.log("Error de operacion");
