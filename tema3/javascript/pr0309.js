@@ -1,5 +1,12 @@
-const str = 'Hola que tal';
+function noVowels(str) { 
+    let resultado = "";
+    const vocales = 'aeiouAEIOU'
+    for (let char of str){
+        if(!vocales.includes(char)){
+            resultado = resultado + char;
+        }
+    };
+    return resultado;
+}
 
-const noVowels = str.replace(/[aeiou]/gi, '');
-
-console.log(noVowels); 
+console.log(noVowels("Hola"));
