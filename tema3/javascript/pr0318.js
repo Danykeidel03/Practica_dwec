@@ -1,18 +1,16 @@
-let arr = [
-    {   name: 'Victor',
-        surname: 'González',
-    },
-    {
-        name: 'Pepe',
-        surname: 'Pérez',
-    }]
-
 let generateUsername = ( arr ) => {
     arr.forEach(item => {
         item.nickname = item.name.slice(0, 1).toLowerCase()+item.surname.toLowerCase()
-
+                      + Math.trunc(Math.random() * (10) + 1)
+                      + Math.trunc(Math.random() * (10) + 1);
     });
-        console.log(arr);
-    };
+    console.log(arr);
+};
 
-    console.log(generateUsername = ( arr ));
+let array1 = [
+    { name: 'Diego', surname: 'Freile'},
+    { name: 'Pablo', surname: 'Vivas' },
+    { name: 'Daniel', surname: 'Fernández' }
+];
+
+console.log(generateUsername(array1));;
