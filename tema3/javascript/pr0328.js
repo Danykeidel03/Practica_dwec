@@ -28,15 +28,12 @@ let arr = [
         }
     }
 ]
-function getAverageGrade(arr, modulo){
-    let notaMedia = 0;
-    arr.forEach(item => {
-        let notas = item['notas'];
-        notaMedia += notas[modulo];        
+function getUsernames(arr){
+    return arr.map( (item) => {
+        fin = item.nombre + item.ape1.substr(0,1) +item.ape2.substr(0,1);
+        return fin.toLowerCase() 
     });
-    notaMedia = notaMedia/arr.length;
-    return notaMedia;
 }
 
 
-console.log(getAverageGrade(arr, 'DIW'));
+console.log(getUsernames(arr));
