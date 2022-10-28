@@ -28,15 +28,16 @@ let arr = [
         }
     }
 ]
-function getAverageGrade(arr, modulo){
-    let notaMedia = 0;
-    arr.forEach(item => {
-        let notas = item['notas'];
-        notaMedia += notas[modulo];        
+function getAverages(arr){
+    return arr.map( (item) => {
+        let min = ['abcdefghijklmnopqrstuvwxyz'];
+        let max = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+        let num = ['1234567890'];
+        if(item.pass.includes(min) && item.pass.includes(max) && item.pass.includes(num)){
+                return item.nombre;
+        }
     });
-    notaMedia = notaMedia/arr.length;
-    return notaMedia;
 }
 
 
-console.log(getAverageGrade(arr, 'DIW'));
+console.log(getAverages(arr));
