@@ -28,16 +28,20 @@ let arr = [
         }
     }
 ]
-function getAverages(arr){
+function getAverages(){
+    function isMay(arr){
+        return arr.some (item =>
+            item ==item.toLowerCase() &&
+            item ==item.toUpperCase() &&
+            item== Number(item)
+            )
+    }
     return arr.map( (item) => {
-        let min = ['abcdefghijklmnopqrstuvwxyz'];
-        let max = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-        let num = ['1234567890'];
-        if(item.pass.includes(min) && item.pass.includes(max) && item.pass.includes(num)){
-                return item.nombre;
+        if(item.pass.length >= 8 && isMay(item.pass.split(''))){
+                return "safe password";
         }
     });
 }
 
 
-console.log(getAverages(arr));
+console.log(getAverages());
