@@ -28,12 +28,17 @@ let arr = [
         }
     }
 ]
-function getAverages(arr){
-    return arr.map( (item) => {
-        nombre = item.nombre + " " + item.ape1 + " " +item.ape2
-        nota = item.notas.DIW+item.notas.DWEC+item.notas.DWES;
-        return "Alumno: "+ nombre + ", Expediente: " + item.expediente + ",Nota: " + nota/3
+function getAverages(alumnos){
+    let arr2 = alumnos.map( (item,index,arr) => {
+        let notas = Object.values(item.notas)
+        return{
+            nombre: item.nombre,
+            expediente: item.expediente,
+            nota_media: notas.reduce((acum,nota,index,arr) => acum += nota ,0)/notas.length 
+        }
     });
+
+    return arr2;
 }
 
 
