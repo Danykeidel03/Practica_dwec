@@ -106,7 +106,10 @@ renderProducts();
 // para crear el nodo se hace otra funcion donde recoges cada objeto del array , le creas un div , a este div le añades una clase 
 // y por ultimo a cada div le haces un innerhtml para introducir el contenido
 
+
+
 function renderProducts(){
+    let btn = document.createElement('button')
     let productos = document.getElementById('products-section');
     products.forEach( (fruit) => {
         let node = createNode(fruit);
@@ -123,13 +126,73 @@ function createNode(fruit){
             <td>${fruit.product}</td>
         </tr>
         <tr>
-            <td id='uno'>${fruit.price/100}€/Kg  <input type='button' value='Click me'>
+            <td id="uno">${fruit.price/100}€/Kg  <button data-id="${fruit.id}">Agregar</button>
             </td>
         </tr>
     </table>`
-
+    let btn = div.querySelector("button");
+    btn.addEventListener("click",handleClick)
     return div;
 
 }
+
+function handleClick(event){
+  let productos = document.getElementById('products-section');
+  console.log("hola");
+}
+
+// products.forEach(index => {
+//   let divProductos = document.getElementById('products-section');
+
+//   // DIV GLOBAL DE PRODUCTOS
+//   let divProducto = document.createElement('div');
+//   divProducto.classList.add("product");
+
+//   // DIV IMAGEN
+//   let divImagen = document.createElement('div');
+//   divImagen.classList.add("product-foto");
+
+//   // DIV INFO PRODUCTO
+//   let divInfo = document.createElement('div');
+//   divInfo.classList.add("product-data");
+
+//   // DIV NOMBRE PRODUCTO
+//   let divName = document.createElement('div');
+//   divName.classList.add("fruit-name");
+
+//   // DIV PRECIO PRODUCTO
+//   let divPrecio = document.createElement('div');
+//   divPrecio.classList.add("price");
+
+//   // DIV BOTON COMPRA
+//   let divBoton = document.createElement('div');
+//   divBoton.classList.add("btn", "btn-add-product");
+
+//   // INSERCION DE DIV
+//   divProductos.append(divProducto);
+//   divProducto.append(divImagen);
+//   divProducto.append(divInfo);
+//   divInfo.append(divName);
+//   divInfo.append(divPrecio);
+//   divInfo.append(divBoton);
+
+//   // AÑADIR IMAGEN
+//   let imagen = document.createElement('img');
+//   imagen.setAttribute('src', ${index['image']});
+//   divImagen.append(imagen);
+
+//   // AÑADIR NOMBRE
+//   let nombre = document.createElement('b');
+//   nombre.textContent = ${index['product']};
+//   divName.append(nombre);
+
+//   let precio = document.createElement('p');
+//   precio.textContent = ${index['price']} + '€/Kg';
+//   divPrecio.append(precio);
+
+//   let boton = document.createElement('button');
+//   boton.textContent = 'Añadir';
+//   divBoton.append(boton);
+//   });
 
 

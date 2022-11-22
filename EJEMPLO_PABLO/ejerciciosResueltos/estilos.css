@@ -3,27 +3,6 @@ body {
     box-sizing: border-box;
 }
 
-.producto{
-    float: left;
-    padding: 45px;
-}
-
-td{
-    border: 1px solid black;
-    background-color: #5ddb72;
-    width: 250px;
-    text-align: center;
-}
-
-#uno{
-    border: 1px solid black;
-    background-color: #db9a5d;
-    width: 250px;
-    height: 40px;
-    text-align:left;
-    color: white;
-}
-
 h1 {
     text-align: center;
 }
@@ -61,4 +40,12 @@ body {
     width: 30vw;
     min-width: 350;
     background-color: #CA9E13;
+}
+
+
+div {
+    float:left;
+}
+.producto {
+    margin: 40px 40px;
 }
