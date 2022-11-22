@@ -1,13 +1,10 @@
-let btn = document.getElementById('btn');
+let boton = document.getElementById("btn");
+        let contenedor = document.getElementsByClassName("images")[0];
 
-function handleClick(event){
-    let images = document.querySelector('.images');
-    // let lImg = document.querySelector('img:lastChild')
-    // let IIImg = document.querySelector('img:nth-child(2)')
-    let img = document.querySelectorAll('img');
-    var a = Math.random(0,4);
-    let lastImg=img[a]
-    images.replaceWith(lastImg);
-}
+        boton.addEventListener("click", (e) =>{
+            let imagenes = document.querySelectorAll("img");
+            let images = Array.from(imagenes);
+            images.sort((a, b) => 0.5 - Math.random());
 
-btn.addEventListener("click",handleClick)
+            contenedor.innerHTML = images.reduce((acum,item) => acum + item.outerHTML,'');
+        });
