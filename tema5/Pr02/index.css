@@ -1,0 +1,13 @@
+td{
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+.selected{
+    background-color: yellow;
+}
+.selectedR{
+    background-color: rgb(255, 0, 0);
+}
