@@ -11,12 +11,12 @@ function mostrar(){
         console.log('La fecha es correcta');
         let fecha1 = (text.split('/'));
         console.log(fecha1);
-        // let dia = fecha1[0]
-        // let mes = fecha1[1]
-        // let ano = fecha1[2]
+        let dia = fecha1[0]
+        let mes = fecha1[1]
+        let ano = fecha1[2]
 
-        // let parrafo = document.createElement('p')
-        // parrafo.innerHTML = (`Dia ${dia} del mes ${mes} y del año ${ano}`)
+        let parrafo = document.createElement('p')
+        parrafo.innerHTML = (`Dia ${dia} del mes ${mes} y del año ${ano}`)
         body.append(parrafo);
     }else{
         console.log('La fecha no es valida');
