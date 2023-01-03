@@ -1,0 +1,17 @@
+body{
+    margin: 0px;
+}
+
+.cont{
+    background-color: aquamarine;
+    height: 150px;
+    display:flex;
+    align-items: center;
+    font-size: 100px;    
+    justify-content: center;
+}
+
+.juego{
+    height: calc(100vh - 150px);
+}
+
