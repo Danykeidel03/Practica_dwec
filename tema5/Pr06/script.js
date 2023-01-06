@@ -3,20 +3,14 @@ let espacios = document.getElementById('spaces');
 let fallos = 0;
 let letrasPalabra = [];
 console.log(palabraAleatoria);
-generateSpaces(palabraAleatoria);
-generateKeyborad();
+esp(palabraAleatoria);
+teclado1();
 
 
-function generateSpaces(palabraAleatoria) {
-    for (let i = 0; i < palabraAleatoria.length; i++) {
-        espacios.innerHTML += '<span class="space"></span>';
-    }
-}
 
-function generateKeyborad() {
+
+function teclado1() {
     let teclado = document.getElementById('keyboard');
-
-    //teclado en pantalla
     letras.forEach(letra => {
         let letra2 = document.createElement("span");
         letra2.textContent = letra;
@@ -28,11 +22,15 @@ function generateKeyborad() {
         });
     });
 
-    // teclado del PC
     document.getElementsByTagName("body")[0].addEventListener("keyup", (e) => {
         updateWord(e.key);
         
     });
+}
+
+function img() {
+    let hanged = document.getElementById('hanged');
+    hanged.innerHTML = `<img src="img/hangman_0${fallos}.bmp" />`;
 }
 
 function updateWord(letra) {
@@ -64,7 +62,7 @@ function updateWord(letra) {
         }
     } else {
         fallos++;
-        updateImg();
+        img();
         console.log("PERDISTE");
         for (let i = 0; i < palabraAleatoria.length; i++) {
             espacios.children[i].textContent = palabraAleatoria.charAt(i);
@@ -73,7 +71,9 @@ function updateWord(letra) {
 
 }
 
-function updateImg() {
-    let hanged = document.getElementById('hanged');
-    hanged.innerHTML = `<img src="img/hangman_0${fallos}.bmp" />`;
+function esp(palabraAleatoria) {
+    for (let i = 0; i < palabraAleatoria.length; i++) {
+        espacios.innerHTML += '<span class="space"></span>';
+    }
 }
+
