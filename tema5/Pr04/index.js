@@ -36,7 +36,6 @@ function handleClick(event){
     let ancho = Math.floor(Math.random()*100+100);
     rectangulo.style.width=ancho+'px';
     rectangulo.style.position='relative';
-    rectangulo.style.left=Math.floor(Math.random()*(zona.clientWidth-ancho))+'px';
-    rectangulo.style.top=Math.floor(Math.random()*(zona.clientHeight-altura))+'px';
+    rectangulo.style.left=Math.floor(Math.random()*(juego.clientWidth-ancho))+'px';
+    rectangulo.style.top=Math.floor(Math.random()*(juego.clientHeight-altura))+'px';
 }
-
