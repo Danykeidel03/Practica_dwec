@@ -25,3 +25,35 @@ function mostrar(){
     }
 }
 
+fetch(`http://localhost/dwes/PROYECTO_2TRI/APIS/api.php`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+        body: usuario
+    })
+
+        .then(response => {
+            switch (response.status) {
+                case 200:
+                    console.log("Actualizado");
+                    break;
+                case 400:
+                    console.log("Id error");
+                    break;
+                case 401:
+                    console.log("Token no valido");
+            }
+            return response.json();
+        })
+
+        .then(data => {
+            // let token = data.token;
+            // let id = data.id;
+            // console.log(token);
+            // console.log(id);
+            // localStorage.setItem('token', token);
+        })
+
+
